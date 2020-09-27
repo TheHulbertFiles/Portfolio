@@ -117,9 +117,6 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-FILES_ROOT = os.path.join(BASE_DIR, 'files')
-FILES_URL = '/files/'
-
 try:
     from .local_settings import *
 except ImportError:
