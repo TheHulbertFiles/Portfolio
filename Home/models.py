@@ -14,7 +14,7 @@ class Social(models.Model):
     
 class Section(models.Model):
     section_Title = models.CharField(max_length=200)
-    section_Image = models.ImageField(upload_to='media/images/')
+    section_Image = models.ImageField(upload_to='images/')
     section_Description = models.CharField(max_length=200)
     section_Link = models.CharField(max_length=200)
 
