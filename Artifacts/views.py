@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+# URL Requests
+def artifacts(request):
+    return render(request, 'artifacts/artifacts.html')

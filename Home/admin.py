@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Social, Section
+
+mods = (Social, Section)
+
+# Register Social Links
+admin.site.register(mods)

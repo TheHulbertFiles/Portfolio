@@ -1,0 +1,62 @@
+{% extends 'home/layout.html' %}
+
+{% load static %}
+
+{% block content %}
+<!-- Main Header -->
+<section class='mb-5' id='header'>
+    <img src='{% static "portfolio/images/header5.jpg" %}' class='img-fluid mx-auto d-block shadow-lg' alt='Header'>
+</section>
+
+<!-- About Content-->
+<section class='container-fluid'>
+    <div class='row'>
+        
+        <!-- Welcome -->
+        <div class='container col-md-7'>
+            <div class='container col-12' id='Note'>
+
+                <div class='container'>
+                    <img src='{% static "portfolio/images/TP.png" %}' class='img-fluid rounded mb-3' alt='Welcome'>
+                    <p>
+                        Welcome to the site. This site is dedicated as an electronic
+                        portfolio to showcase my skills and artifacts in Information Technology
+                        and Computer Science. As this ePortfolio is an ongoing, dynamic project
+                        in and of itself, some features and content may be limited.
+                    </p>
+                    <p>
+                        My name is Eoghan and I am a developer. Much of my skill is in back-end
+                        development, but as you can see, I also handle front-end development.
+                        I am also interested in software and application development and will be
+                        hosting them here as well. Check back often for new updates.
+                    </p>
+                </div>
+
+                <hr class='mt-5' />
+
+            </div>
+        </div>
+
+        <div class='container pt-4 col-md-5'>
+
+            <!-- Website Sections -->
+            <div class='container col-md-10 d-flex flex-wrap' id='Sections'>
+                {% for s in sections.all %}
+                <div class='row col-6 col-md-12 my-3'>
+                    <div class='container col-4 col-lg-3'>
+                        <img class='img-fluid rounded shadow' src='{{ s.section_Image.url }}'>
+                    </div>
+                    <div class='container col-8 col-lg-9'>
+                        <a href='{{ s.section_Link }}'><h5 class='mb-0'>{{ s.section_Title }}</h5></a>
+                        <small>{{ s.section_Description }}</small>
+                    </div>
+                </div>
+                <hr />
+                {% endfor %}
+            </div>
+
+        </div>
+
+    </div>
+ </section>
+{% endblock content %}
