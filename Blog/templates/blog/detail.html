@@ -1,0 +1,26 @@
+{% extends 'blog/layout.html' %}
+
+{% load static %}
+
+{% block content %}
+<img class='img-fluid shadow-lg' src='{{ post.post_image.url }}'>
+
+<!-- Profile -->
+<section class='container py-5' id='header'>
+        
+    <div class='container header'>
+        <h1 class='title mb-0'>{{ post.post_title }}</h1>
+        <small class='subheading'>Author: {{ post.post_author }}</small>
+        <hr class='col-6 col-lg-4 divider'>
+    </div>
+    <div class='container'>
+        <p>
+            <small class='citation'>Published: {{ post.pub_date_mod }}</small><br />
+            <small class='text-muted'>Last Modified: {{ post.mod_date_f }}</small>
+        </p>
+        <p>{{ post.post_body|linebreaks }}</p>
+        <p><strong>Tags:</strong> {{ post.post_tags }}</p>
+    </div>
+
+</section>
+{% endblock content %}
