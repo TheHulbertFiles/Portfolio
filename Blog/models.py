@@ -1,11 +1,12 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 class Post(models.Model):
     post_title = models.CharField(max_length=200)
     post_pub_date = models.DateTimeField()
     post_author = models.CharField(max_length=200)
     post_image = models.ImageField(upload_to='images/')
-    post_body = models.TextField()
+    post_body = RichTextField()
     post_mod_date = models.DateTimeField()
     post_tags = models.CharField(max_length=200)
 

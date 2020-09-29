@@ -9,4 +9,5 @@ urlpatterns = [
     path('', include('Artifacts.urls')),
     path('', include('Blog.urls')),
     path('', include('Projects.urls')),
+    path(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

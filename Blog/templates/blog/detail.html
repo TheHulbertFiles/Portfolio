@@ -18,7 +18,7 @@
             <small class='citation'>Published: {{ post.pub_date_mod }}</small><br />
             <small class='text-muted'>Last Modified: {{ post.mod_date_f }}</small>
         </p>
-        <p>{{ post.post_body|linebreaks }}</p>
+        <p>{{ post.post_body|safe|linebreaks }}</p>
         <p><strong>Tags:</strong> {{ post.post_tags }}</p>
     </div>
 
