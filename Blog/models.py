@@ -1,5 +1,16 @@
 from django.db import models
+from django.contrib import admin
 from ckeditor.fields import RichTextField
+
+class Tags(models.Model):
+    tag_Name = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name_plural = "Tags"
+        ordering = ['tag_Name']
+
+    def __str__(self):
+        return self.tag_Name
 
 class Post(models.Model):
     post_title = models.CharField(max_length=200)
@@ -8,7 +19,7 @@ class Post(models.Model):
     post_image = models.ImageField(upload_to='images/')
     post_body = RichTextField()
     post_mod_date = models.DateTimeField()
-    post_tags = models.CharField(max_length=200)
+    post_tags = models.ManyToManyField(Tags)
 
     def __str__(self):
         return self.post_title
