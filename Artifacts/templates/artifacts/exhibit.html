@@ -1,0 +1,41 @@
+{% extends 'artifacts/layout.html' %}
+
+{% load static %}
+
+{% block content %}
+<!-- Artifact Content -->
+<section class='container py-5' id='header'>
+        
+    <img class='img-fluid shadow-lg mb-5' src='{{ art.artifacts_Image.url }}'>
+
+    <div class='container header'>
+        <h1 class='title mb-0'>{{ art.artifacts_Title }}</h1>
+        <small class='subheading'>Developed: {{ art.artifacts_Date }}</small>
+        <hr class='col-6 col-lg-4 divider'>
+    </div>
+    <div class='container'>
+        <p>{{ art.artifacts_Description|safe|linebreaks }}</p>
+        <!-- Cycle Through Files list for Artifact -->
+        <p>
+            <strong>File(s):</strong>
+            {% for f in art.artifacts_Files.all %}
+            <a href='{{ f.file_Upload.url }}'>
+                <div class='card col-6 col-md-3'>
+                    <div class='card-body text-center'>
+                        {{ f.file_Icon|safe }}<br/>
+                        {{ f.file_Name }}
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </p>
+        <p class='mt-3 text-muted'><strong>Tags:</strong>&emsp;
+            <!-- Cycle Through Tags list for Artifact -->
+            {% for tag in art.artifacts_Skills.all %} 
+                {{ tag|upper }}, 
+            {% endfor %}
+        </p>
+    </div>
+
+</section>
+{% endblock content %}

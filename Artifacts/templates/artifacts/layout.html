@@ -33,7 +33,7 @@
 
     <!-- Custom CSS -->
     <link rel='stylesheet' href='{% static "portfolio/css/portfolio.css" %}' type='text/css' media='screen'>
-    <link rel='stylesheet' href='{% static "home/css/home.css" %}' type='text/css' media='screen'>
+    <link rel='stylesheet' href='{% static "artifacts/css/artifacts.css" %}' type='text/css' media='screen'>
 
     <!-- Fonts -->
     <script src="https://kit.fontawesome.com/384432fb44.js" crossorigin="anonymous"></script>
@@ -71,7 +71,7 @@
             <div id='socialLinks'>
                 {% for s in soc.all %}
                 <a href='{{ s.social_Link }}'>
-                    <i class='{{ s.social_FaClass }}'></i>
+                    {{ s.social_FaClass|safe }}
                 </a>
                 {% endfor %}
             </div>

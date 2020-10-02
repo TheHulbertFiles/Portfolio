@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
-from .models import Section, Social
+from .models import Section
+from Global.models import Social
 
 # URL Requests
 def home(request):

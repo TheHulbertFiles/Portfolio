@@ -1,8 +1,8 @@
 from django.contrib import admin
+from .models import Section
 
-from .models import Social, Section
+# Combine Models
+mods = (Section)
 
-mods = (Social, Section)
-
-# Register Social Links
+# Register Models
 admin.site.register(mods)

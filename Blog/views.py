@@ -1,12 +1,17 @@
 from django.shortcuts import render, get_object_or_404
 
 from .models import Post
+from Global.models import Social
 
-# Create your views here.
+# URL Requests
 def blog(request):
     posts = Post.objects
-    return render(request, 'blog/blog.html', {'posts':posts})
+    soc = Social.objects
+    context = {'soc':soc, 'posts':posts}
+    return render(request, 'blog/blog.html', context)
 
-def detail(request, Post_id):
+def post_detail(request, Post_id):
     post = get_object_or_404(Post, pk=Post_id)
-    return render(request, 'blog/detail.html', {'post':post})
+    soc = Social.objects
+    context = {'soc':soc, 'post':post}
+    return render(request, 'blog/post.html', context)

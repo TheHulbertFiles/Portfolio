@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Created Apps
+    'Global.apps.GlobalConfig',
     'Artifacts.apps.ArtifactsConfig',
     'Blog.apps.BlogConfig',
     'Home.apps.HomeConfig',
@@ -180,6 +181,9 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+UPLOAD_ROOT = os.path.join(BASE_DIR, 'files')
+UPLOAD_URL = '/files/'
 
 try:
     from .local_settings import *

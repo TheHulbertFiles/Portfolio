@@ -1,9 +1,8 @@
 from django.contrib import admin
+from .models import Post
 
-# Register your models here.
-from .models import Post, Tags
+# Combine Models
+mods = (Post)
 
-mods = (Post, Tags)
-
-# Register Social Links
+# Register Models
 admin.site.register(mods)

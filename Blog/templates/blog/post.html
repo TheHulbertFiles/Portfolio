@@ -22,7 +22,7 @@
         <p class='mt-3 text-muted'><strong>Tags:</strong>&emsp;
             <!-- Cycle Through Tags list for Post -->
              {% for tag in post.post_tags.all %} 
-                {{ tag }},  
+                {{ tag|upper }},  
             {% endfor %}
         </p>
     </div>

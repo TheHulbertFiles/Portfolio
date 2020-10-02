@@ -71,7 +71,7 @@
             <div id='socialLinks'>
                 {% for s in soc.all %}
                 <a href='{{ s.social_Link }}'>
-                    <i class='{{ s.social_FaClass }}'></i>
+                    {{ s.social_FaClass|safe }}
                 </a>
                 {% endfor %}
             </div>
