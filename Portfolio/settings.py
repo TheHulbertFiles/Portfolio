@@ -33,12 +33,20 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Created Apps
+    # Global Module
     'Global.apps.GlobalConfig',
+
+    # Portfolio Apps
     'Artifacts.apps.ArtifactsConfig',
     'Blog.apps.BlogConfig',
     'Home.apps.HomeConfig',
     'Projects.apps.ProjectsConfig',
+
+    # Resume Apps
+    'Resume.apps.ResumeConfig',
+    'Education.apps.EducationConfig',
+    'Experience.apps.ExperienceConfig',
+    'Skills.apps.SkillsConfig',
 
     # Third Party
     'ckeditor',

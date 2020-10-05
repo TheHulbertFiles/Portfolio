@@ -1,0 +1,58 @@
+{% extends 'skills/layout.html' %}
+
+{% block content %}
+<!-- Skills Content -->
+<section class='col-12 col-md-11 mx-auto d-block py-5 shadow-lg'>
+    <div class='container col-12 col-md-10 my-5'>
+
+        <!-- Skills Header -->
+        <div class='container mt-5 header'>
+            <h2 class='headertxt'>Skills</h2>
+            <hr class='col-6 col-lg-4 divider'>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class='container my-5' id='TechnicalSkills'>
+            <h4 class='mb-0'>Technical</h4>
+            <hr />
+            <div class='container' id='skillsList'>
+                {% for t in t_skills.all %}
+                <span>
+                    <a href='{% url "skill_details" t.id %}'>{{ t.skill_Name }}</a>
+                    <small class='annotation'>{{ t.skill_Years|stringformat:'d' }} Years &emsp;</small>
+                </span>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class='container my-5' id='SoftSkills'>
+            <h4 class='mb-0'>Soft</h4>
+            <hr />
+            <div class='container' id='skillsList'>
+                {% for s in s_skills.all %}
+                <span>
+                    <a href='{% url "skill_details" s.id %}'>{{ s.skill_Name }}</a>
+                    <small  class='annotation'>{{ s.skill_Years|stringformat:'d' }} Years &emsp;</small>
+                </span>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Other Skills -->
+        <div class='container my-5' id='OtherSkills'>
+            <h4 class='mb-0'>Other</h4>
+            <hr />
+            <div class='container' id='skillsList'>
+                {% for o in o_skills.all %}
+                <span>
+                    <a href='{% url "skill_details" o.id %}'>{{ o.skill_Name }}</a>
+                    <small  class='annotation'>{{ o.skill_Years|stringformat:'d' }} Years &emsp;</small>
+                </span>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock content %}

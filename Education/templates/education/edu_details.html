@@ -1,0 +1,52 @@
+{% extends 'education/layout.html' %}
+
+{% block content %}
+<!-- Education Detail Content -->
+<section class='col-md-10 mx-auto d-block py-5 mb-5 shadow-lg'>
+
+    <!-- Education Detail Header -->
+    <div class='container'>
+        <img class='mr-md-3 mr-lg-5 crest' src='{{ edu.education_Image.url }}'>
+    </div>
+
+    <!-- Education Detail Body -->
+    <div class='container col-md-10 py-3 justify-content-center' id='description'>
+        <h4 class='title mb-0'>{{ edu.education_Degree }}</h4>
+        <small class='annotation'>{{ edu.education_University }}</small>
+        <hr />
+        <p><strong>Duration:</strong> {{ edu.education_Dates }}</p>
+        <p><strong>GPA:</strong> {{ edu.education_GPA }}</p>
+        <p><strong>Description:</strong> {{ edu.education_Description | linebreaksbr }}</p>
+        <p><strong>Skills:</strong> 
+            <!-- Cycle Through Skills list -->
+            {% for s in edu.education_Skills.all %} 
+                <a href='{% url "skill_details" s.id %}'>{{ s|upper }}</a>,  
+            {% endfor %}</p>
+    </div>
+
+    <!-- Education Detail Courses -->
+    <div class='container col-md-10 my-3 justify-content-center'>
+        <div class='collapse' id='collapseCourses'>
+            <div class='container courseList'>
+
+                {% for c in courses.all %}
+                <div class='row'>
+                    <div class='container col-4'>
+                        <strong>{{ c.course_Abbr }} {{ c.course_Number}}</strong>
+                    </div>
+                    <div class='container col-8'>
+                        <a href='{% url "course_details" edu.id c.id %}'>{{c.course_Name}}</a>
+                    </div>
+                </div>
+                <hr />
+                {% endfor %}
+            </div>
+        </div>
+        <button class='btn container mb-3' type='button' data-toggle='collapse' data-target='#collapseCourses'
+            aria-expanded='false' aria-controls='collapseCourses'>
+            Degree Courses<br/><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-up"></i>
+        </button>
+    </div>
+
+</section>
+{% endblock content %}

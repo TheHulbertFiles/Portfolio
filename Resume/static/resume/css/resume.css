@@ -1,0 +1,125 @@
+nav {
+    background-color: #333333;
+}
+
+body {
+    font-family: "Avenir", serif;
+    font-size: 10pt;
+}
+
+body body p {
+    line-height: 1.8;
+}
+
+body body ul {
+    line-height: 1.8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Cambria", serif;
+}
+
+a {
+    color: /** #5A0500 **/ #EA80B0;
+    font-weight: 450;
+}
+
+a:hover,
+a>h4:hover {
+    text-decoration: none;
+    font-weight: 450;
+    color:/**  #6c757d **/#EA80B0;
+    opacity: 50%;
+}
+
+footer .inner {
+    text-align: center;
+}
+
+footer .fa-fw {
+    padding: 20px;
+    font-size: 20px;
+    width: 50px;
+    text-align: left;
+    text-decoration: none;
+    margin: 5px 2px;
+}
+
+.header {
+    text-align: center;
+}
+
+.annotation {
+    color: #6c757d;
+    text-transform: uppercase;
+}
+
+.title {
+    color: /** #5A0500 **/ #EA80B0;
+}
+
+.btn {
+    background-color: #ffffff;
+}
+
+.btn:hover {
+    color: #cccccc;
+}
+
+.divider {
+    border-color: #000000;
+}
+
+.crest {
+    float: right;
+    max-width: 150px;
+    height: auto;
+}
+
+.red {
+    color:/** #5A0500 **/ #EA80B0;
+    font-weight: 450;
+}
+
+#islist {
+    list-style-type: none;
+    display: block;
+    flex-wrap: wrap;
+}
+
+#islist i {
+    color: /** #5A0500 **/ #EA80B0;
+}
+
+#item {
+    margin-left: 2px;
+}
+
+#courseYear {
+    font-weight: 500;
+    color: /** #5A0500 **/ #EA80B0;
+    text-align: center;
+}
+
+#background {
+    background-color: #eeeeee;
+    border-radius: 10px;
+}
+
+#skillsList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#ibg {
+    color: #6c757d;
+}
+
+#ibi {
+    color: #EA80B0;
+}

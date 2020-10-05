@@ -5,7 +5,7 @@
     {% load static %}
 
     <!-- Address Field-->
-    <link rel='shortcut icon' type='image/x-icon' href='{% static "portfolio/images/thfm.ico" %}'>
+    <link rel='shortcut icon' type='image/x-icon' href='{% static "global/images/thfm.ico" %}'>
 
     <!-- Tab Field -->
     <title>The Hulbert Files</title>
@@ -43,10 +43,10 @@
 <body>
 
     <!-- Navigation Bar -->
-    <nav class='navbar navbar-expand-lg navbar-light bg-light shadow-lg'>
+    <nav class='navbar navbar-expand-lg navbar-dark shadow-lg'>
         <a class='navbar-brand' href='{% url "home" %}'>
             <!-- Brand -->
-            <img src='{% static "portfolio/images/TP.png" %}' height='50' alt='The Hulbert Files'>
+            <img src='{% static "global/images/GREYTP.png" %}' height='50' alt='The Hulbert Files'>
         </a>
         <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNavAltMarkup'
             aria-controls='navbarNavAltMarkup' aria-expanded='false' aria-label='Toggle navigation'>
@@ -58,7 +58,7 @@
                 <a class='nav-link' href='{% url "artifacts" %}'>Artifacts</a>
                 <a class='nav-link active' href='{% url "blog" %}'>Blog</a>
                 <a class='nav-link' href='{% url "projects" %}'>Demos</a>
-                <a class='nav-link' href='https://www.eoghan.hulbert.info/resume/'>Resume</a>
+                <a class='nav-link' href='{% url "resume" %}'>Resume</a>
             </div>
         </div>
     </nav>

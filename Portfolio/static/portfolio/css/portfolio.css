@@ -1,3 +1,7 @@
+nav {
+  background-color: #EA80B0;
+}
+
 body {
   font-family: "Avenir", serif;
   font-size: 10pt;
@@ -21,14 +25,15 @@ h6 {
 }
 
 a {
-  color: #5A0500;
+  color: /** #5A0500 **/ #EA80B0;
   font-weight: 450;
 }
 
-a:hover {
+a:hover, a > h5:hover {
   text-decoration: none;
-  font-weight: 500;
-  color: #6c757d;
+  font-weight: 450;
+  color:/**  #6c757d **/ #EA80B0;
+  opacity: 50%;
 }
 
 footer .inner {
@@ -49,10 +54,10 @@ footer .fa-fw {
 }
 
 .annotation {
-  color: #6c757d;
+  color: /** #6c757d **/ #EA80B0;
   text-transform: uppercase;
 }
 
 .title {
-  color: #5A0500;
+  color: /** #5A0500 **/ #EA80B0;
 }

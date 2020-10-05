@@ -1,0 +1,38 @@
+{% extends 'projects/layout.html' %}
+
+{% load static %}
+
+{% block content %}
+<!-- Artifact Content -->
+<section class='container py-5' id='header'>
+
+    <img class='exImg shadow mx-auto' src='{{ proj.project_Image.url }}'>
+
+    <div class='container my-5'>
+
+        <h1 class='title mb-0'>{{ proj.project_Title }}</h1>
+        <hr class='col-6 mb-3' align='left'>
+
+        <p>
+            <strong>Developed:</strong>&emsp;{{ proj.project_Year }} <br />
+            <strong>Institution:</strong>&emsp;{{ proj.project_Institute }} <br />
+            <strong>Project Type:</strong>&emsp;{{ proj.project_Type }}</small> <br />
+        </p>
+        <p>
+            {{ proj.project_Description|safe|linebreaks }}
+        </p>
+        <p class='mt-3'>
+            <strong>GitHub Repository:</strong>&emsp;
+            <a href='{{ proj.project_Link }}'>{{ proj.project_Link }}</a> <br />
+
+            <strong>Tags:</strong>&emsp;
+            <!-- Cycle Through Tags list for Artifact -->
+            {% for tag in proj.project_Skills.all %} 
+                {{ tag|upper }}, 
+            {% endfor %}
+        </p>
+
+    </div>
+
+</section>
+{% endblock content %}

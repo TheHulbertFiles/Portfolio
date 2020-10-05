@@ -1,0 +1,74 @@
+{% extends 'resume/layout.html' %}
+
+{% load static %}
+
+{% block content %}
+<!-- Resume Header -->
+<div id='resumehead'>
+    <img class='img-fluid' src='{% static "resume/images/fallheader.jpg" %}' id='headerImg'>
+</div>
+
+<div class="alert alert-secondary alert-dismissible fade show" role="alert">
+    <h1>We're Going <span style='color: #EA80B0;'>Pink!</span></h1>
+    <p>
+        October is Breast Cancer Awareness month and we are going <span style='color: #EA80B0;'>PINK</span> for the entire month to show 
+        our support. 1 in 8 people in the U.S. will develop breast cancer in their lifetime. It 
+        is important to be tested regularly to catch early signs of breast cancer. 
+        For more information on Breast Cancer, 
+        <a href='https://www.nationalbreastcancer.org/breast-cancer-awareness-month'>Click Here</a>.
+    </p>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<!-- Profile -->
+<section class='container py-5' id='header'>
+    <div class='row justify-content-center'>
+        
+        <div class='container header'>
+            <h1 class='title mb-0'>R. Eoghan Hulbert</h1>
+            <small class='annotation'>Junior Full-Stack Developer</small>
+            <hr class='col-6 col-lg-4 divider'>
+        </div>
+
+        <div class='container col-11 col-md-10'>
+            <p>&emsp;Independent, goal-oriented individual seeking to expand on current full-stack
+                skillset and provide technical solutions for business needs. Strong 'on-the-go' learner
+                with over ten years customer service experience in multiple environment settings.
+                General project management skills with emphasis on information technology,
+                including business systems analysis and design.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Background -->
+<section class='container py-5' id='background'>
+    <div class='row justify-content-center'>
+
+        <div class='container header'>
+            <h4 class='title'>Background</h4>
+            <hr class='col-6 col-lg-4 divider'>
+        </div>
+
+        <div class='container col-11 col-md-10'>
+            <p>&emsp;I am a graduate of Information Technology and Computer Science. My education
+                prepared me in most areas of application and website development from scratch to
+                completion. This includes back end systems, front end user interfaces, devops,
+                database management, and the ability to pick up new skills with ease.</p>
+            <p>&emsp;These skills have allowed me to grow in my professional career with the ability
+                to think &quot;outside&ndash;the&ndash;box&quot;. While my work experience is not
+                strictly technical, I was able to develop analytical skills and provide contributions
+                to system and workflow development. For example, automation of redundant tasks.</p>
+            <p>&emsp;As my career continues to grow, I seek new opportunities. I am at the point
+                where my horizons need to expand so that I may enhance my skillsets and continue
+                to grow. I now seek roles that are more technical in nature than business&ndash;centric.
+                Ideally, I seek an entry&ndash;level engineer role that will allow me the ability
+                to utilize my skills rather than allow them to fall to waste.</p>
+        </div>
+
+    </div>
+</section>
+{% endblock content %}

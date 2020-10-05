@@ -1,0 +1,53 @@
+{% extends 'education/layout.html' %}
+
+{% block content %}
+<!-- Education Content -->
+<section class='col-12 col-md-11 mx-auto d-block py-5 mb-5 shadow-lg'>
+
+    <!-- Education Header -->
+    <div class='container header mt-5'>
+        <h2 class='headertxt'>Education</h2>
+        <hr class='col-6 col-lg-4 divider'>
+    </div>
+
+    <!-- Education Body -->
+    {% for e in edu.all %}
+    <div class='container col-12 col-md-10 my-5'>
+        <a href='{% url "edu_details" e.id e.education_Degree %}'>
+            <h4 class='title mb-0'>{{ e.education_Degree }}</h4>
+        </a>
+        <h6 class='mb-0'>{{ e.education_University }}</h6>
+        <small class='annotation'>{{ e.education_Dates }}</small>
+        <p class='description mt-3'>
+            {{ e.degree_sum | linebreaksbr }} ...
+            <a href='{% url "edu_details" e.id e.education_Degree %}'>Read More</a>
+        </p>
+    </div>
+
+    <hr class='col-10'>
+    {% endfor %}
+
+    <!-- Independent Study Header -->
+    <div class='container header mt-5'>
+        <h4 class='headertxt'>Independent Learning</h4>
+        <hr class='col-6 col-lg-4 divider'>
+        <!-- Icon Definitions -->
+        <small class='red'>
+            <i class='fas fa-play'></i> = In Progress | <i class='fas fa-spinner'></i> = Pending | <i class='fas fa-check'></i> = Complete
+        </small>
+    </div>
+
+    <!-- Independent Study Body -->
+    <div class='container-fluid col-md-8 col-lg-6 my-5'>
+        <ul class='container-fluid ml-xl-5' id='islist'>
+            {% for c in courses.all %}
+            <li class='row'>
+                <div class='col-2 col-sm-1'><i class='{{ c.other_Progress }}'></i></div>
+                <div class='col-10 col-sm-11'>{{ c.other_Name }}</div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</section>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends 'education/layout.html' %}
+
+{% block content %}
+<!-- Course Detail Content -->
+<section class='col-md-11 mx-auto d-block py-5 shadow-lg'>
+
+    <!-- Course Detal Header -->
+    <div class='container-fluid my-5 text-center'>
+        <h1 class='headertxt'>{{ courses.course_Abbr }} {{ courses.course_Number }}</h1>
+    </div>
+
+    <!-- Course Detail Body -->
+    <div class='container col-md-10' id='description'>
+        <h4 class='title mb-0'>{{ courses.course_Name }}</h4>
+        <small class='annotation'>{{ edu.education_Degree }}</small>
+        <hr />
+        <p>
+            {{ courses.course_Description }}
+        </p>
+    </div>
+
+</section>
+{% endblock content %}

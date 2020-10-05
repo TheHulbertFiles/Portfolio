@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+    {% load static %}
+
+    <!-- Address Field-->
+    <link rel='shortcut icon' type='image/x-icon' href='{% static "global/images/thf.ico" %}'>
+
+    <!-- Tab Field -->
+    <title>R. Eoghan Hulbert</title>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='description' content='This site is foremost a dedicated electronic portfolio for Eoghan Hulbert.'>
+    <meta name='keywords'
+        content='Portfolio, Resume, Computer Science, Information Technology, JAVA, OOP, JavaScript, Database Management, Web Application, PHP, Cyber Security'>
+    <meta name='author' content='Eoghan Hulbert'>
+
+    <!-- JS -->
+    <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'
+        integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo'
+        crossorigin='anonymous'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'
+        integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49'
+        crossorigin='anonymous'></script>
+
+    <!-- Bootstrap -->
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css'
+        integrity='sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB' crossorigin='anonymous'>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js'
+        integrity='sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T'
+        crossorigin='anonymous'></script>
+
+    <!-- Custom CSS -->
+    <link rel='stylesheet' href='{% static "resume/css/resume.css" %}' type='text/css'>
+
+    <!-- Fonts -->
+    <script src="https://kit.fontawesome.com/384432fb44.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class='navbar navbar-expand-lg navbar-dark shadow-lg'>
+        <a class='navbar-brand' href='{% url "home" %}'>
+            <!-- Brand -->
+            <img src='{% static "global/images/WHITETP.png" %}' height='50' alt='The Hulbert Files'>
+        </a>
+        <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNavAltMarkup'
+            aria-controls='navbarNavAltMarkup' aria-expanded='false' aria-label='Toggle navigation'>
+            <i class='fa fa-bars fa-lg' id='fa'></i>
+        </button>
+        <div class='collapse navbar-collapse' id='navbarNavAltMarkup'>
+            <div class='navbar-nav ml-auto'>
+                <a class='nav-link' href='{% url "home" %}'>Home</a>
+                <a class='nav-link' href='{% url "resume" %}'>About</a>
+                <a class='nav-link' href='{% url "experience" %}'>Experience</a>
+                <a class='nav-link' href='{% url "education" %}'>Education</a>
+                <a class='nav-link active' href='{% url "skills" %}'>Skills</a>
+                <a class='nav-link' href='{% static "resume/E.Hulbert.pdf" %}'>Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock content %}
+
+    <footer class='mt-3 sticky-bottom'>
+        <div class='container inner'>
+            <div id='socialLinks'>
+                {% for s in soc.all %}
+                <a href='{{ s.social_Link }}'>
+                    {{ s.social_FaClass|safe }}
+                </a>
+                {% endfor %}
+            </div>
+            <small>
+                Copyright © 2018 &ndash; {% now "Y" %} The Hulbert Files
+            </small>
+        </div>
+    </footer>
+
+</body>
+
+</html>

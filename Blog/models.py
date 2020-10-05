@@ -3,7 +3,7 @@ from django.contrib import admin
 from ckeditor.fields import RichTextField
 
 # Import Relational Tables
-from Global.models import Tags
+from Global.models import Skills, Tags
 
 class Post(models.Model):
     post_title = models.CharField(max_length=200)
@@ -12,7 +12,7 @@ class Post(models.Model):
     post_image = models.ImageField(upload_to='images/')
     post_body = RichTextField()
     post_mod_date = models.DateTimeField()
-    post_tags = models.ManyToManyField(Tags)
+    post_tags = models.ManyToManyField(Skills)
 
     def __str__(self):
         return self.post_title

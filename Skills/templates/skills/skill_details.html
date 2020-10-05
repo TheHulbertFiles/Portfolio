@@ -1,0 +1,25 @@
+{% extends 'skills/layout.html' %}
+
+{% block content %}
+<!-- Skill Detail Content -->
+<section class='col-md-11 mx-auto d-block py-5 shadow-lg'>
+
+    <!-- Skill Detal Header -->
+    <div class='container header'>
+        <span class='fa-stack fa-4x'>
+            <i class='fas fa-square fa-stack-2x' id='ibg'></i>
+            <span id='ibi'>{{ skill.skill_Icon|safe }}</span>
+        </span>
+    </div>
+
+    <!-- Skill Detail Body -->
+    <div class='container col-md-10' id='description'>
+        <h3 class='mb-0'>{{ skill.skill_Name }}</h3>
+        <hr />
+        <p><strong>Level:</strong> {{ skill.skill_Level }}</p>
+        <p><strong>Years:</strong> {{ skill.skill_Years|stringformat:'d' }}</p>
+        <p><strong>Description:</strong> {{ skill.skill_Description }}</p>
+    </div>
+
+</section>
+{% endblock content %}

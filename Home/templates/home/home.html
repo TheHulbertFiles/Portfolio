@@ -4,12 +4,26 @@
 
 {% block content %}
 <!-- Main Header -->
-<section class='mb-5' id='header'>
+<div id='header'>
     <img src='{% static "portfolio/images/header5.jpg" %}' class='img-fluid mx-auto d-block shadow-lg' alt='Header'>
-</section>
+</div>
+
+<div class="alert alert-secondary alert-dismissible fade show" role="alert">
+    <h1>We're Going <span style='color: #EA80B0;'>Pink!</span></h1>
+    <p>
+        October is Breast Cancer Awareness month and we are going <span style='color: #EA80B0;'>PINK</span> for the entire month to show 
+        our support. 1 in 8 people in the U.S. will develop breast cancer in their lifetime. It 
+        is important to be tested regularly to catch early signs of breast cancer. 
+        For more information on Breast Cancer, 
+        <a href='https://www.nationalbreastcancer.org/breast-cancer-awareness-month'>Click Here</a>.
+    </p>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
 
 <!-- About Content-->
-<section class='container-fluid'>
+<section class='container-fluid mt-5'>
     <div class='row'>
         
         <!-- Welcome -->
