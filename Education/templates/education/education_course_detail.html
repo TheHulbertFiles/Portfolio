@@ -8,16 +8,16 @@
 
     <!-- Course Detal Header -->
     <div class='container-fluid my-5 text-center'>
-        <h1 class='headertxt'>{{ courses.course_Abbr }} {{ courses.course_Number }}</h1>
+        <h1 class='headertxt'>{{ course_det.course_Abbr }} {{ course_det.course_Number }}</h1>
     </div>
 
     <!-- Course Detail Body -->
     <div class='container col-md-10' id='description'>
-        <h4 class='title mb-0'>{{ courses.course_Name }}</h4>
-        <small class='annotation'>{{ edu.education_Degree }}</small>
+        <h4 class='title mb-0'>{{ course_det.course_Name }}</h4>
+        <small class='annotation'>{{ course_det.course_Degree }}</small>
         <hr />
         <p>
-            {{ courses.course_Description }}
+            {{ course_det.course_Description }}
         </p>
     </div>
 

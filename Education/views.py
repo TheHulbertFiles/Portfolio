@@ -18,19 +18,16 @@ def education(request):
 def edu_details(request, Edu_id, Edu_degree):
 
     edu = Education.objects
-    courses = Courses.coursesFilter(Edu_degree)
     edu_det = get_object_or_404(edu, pk=Edu_id)
-    context = {'courses':courses, 'edu':edu_det, 'soc':soc}
+    context = {'edu':edu_det, 'soc':soc}
 
     return render(request, 'education/edu_details.html', context)
 
-def course_details(request, Edu_id, Course_id):
+def course_details(request, Course_id):
 
-    edu = Education.objects
     course = Courses.objects
-    edu_det = get_object_or_404(edu, pk=Edu_id)
     course_det = get_object_or_404(course, pk=Course_id)
     
-    context = {'courses':course_det, 'edu':edu_det, 'soc':soc}
+    context = {'course_det':course_det, 'soc':soc}
     
     return render(request, 'education/education_course_detail.html', context)

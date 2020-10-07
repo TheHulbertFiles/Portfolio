@@ -3,6 +3,29 @@ from django.db import models
 # Import Relational Tables
 from Global.models import Skills
 
+class Courses(models.Model):
+    course_Year = models.DateField()
+    course_Term = models.CharField(max_length=100)
+    course_Degree = models.CharField(max_length=100)
+    course_Dept = models.CharField(max_length=100)
+    course_Abbr = models.CharField(max_length=100)
+    course_Number = models.CharField(max_length=100)
+    course_Name = models.CharField(max_length=200)
+    course_Grade = models.CharField(max_length=200, blank=True)
+    course_Description = models.TextField(max_length=3000, blank=True)
+
+    class Meta:
+        verbose_name_plural = "Courses"
+        ordering = ['course_Year']
+
+    def __str__(self):
+        course = self.course_Abbr + ' ' + self.course_Number + ' - ' + self.course_Name + ' - ' + self.course_Degree
+        return course
+    
+    def coursesFilter(Edu_degree):
+        courses_f = Courses.objects.filter(course_Degree=Edu_degree)
+        return courses_f
+
 class Education(models.Model):
     education_Image = models.ImageField(upload_to='images/')
     education_University = models.CharField(max_length=500)
@@ -43,26 +66,3 @@ class Other(models.Model):
 
     def __str__(self):
         return self.other_Name
-
-class Courses(models.Model):
-    course_Year = models.DateField()
-    course_Term = models.CharField(max_length=100)
-    course_Degree = models.CharField(max_length=100)
-    course_Dept = models.CharField(max_length=100)
-    course_Abbr = models.CharField(max_length=100)
-    course_Number = models.CharField(max_length=100)
-    course_Name = models.CharField(max_length=200)
-    course_Grade = models.CharField(max_length=200, blank=True)
-    course_Description = models.TextField(max_length=3000, blank=True)
-
-    class Meta:
-        verbose_name_plural = "Courses"
-        ordering = ['course_Year']
-
-    def __str__(self):
-        course = self.course_Abbr + ' ' + self.course_Number + ' - ' + self.course_Name
-        return courses
-    
-    def coursesFilter(Edu_degree):
-        courses_f = Courses.objects.filter(course_Degree=Edu_degree)
-        return courses_f
