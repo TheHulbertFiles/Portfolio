@@ -12,6 +12,7 @@ class Education(models.Model):
     education_GPA = models.CharField(max_length=200)
     education_Description = models.TextField(max_length=2000)
     education_Skills = models.ManyToManyField(Skills)
+    education_Courses = models.ManyToManyField('Courses')
 
     class Meta:
         verbose_name_plural = "Education"
@@ -22,12 +23,6 @@ class Education(models.Model):
 
     def grad_y(self):
         return self.education_Graduation_Year.strftime('%Y')
-
-    def degree_abbr(self):
-        if self.education_Degree[:4] == 'B.A.':
-            return "Bachelor of Arts"
-        else:
-            return "Associate of Science"
 
     def specialization(self):
         return self.education_Degree[5:100]
