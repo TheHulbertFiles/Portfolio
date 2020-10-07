@@ -58,7 +58,7 @@ class Courses(models.Model):
     course_Number = models.CharField(max_length=100)
     course_Name = models.CharField(max_length=200)
     course_Grade = models.CharField(max_length=200, blank=True)
-    course_Description = models.TextField(max_length=3000)
+    course_Description = models.TextField(max_length=3000, blank=True)
 
     class Meta:
         verbose_name_plural = "Courses"

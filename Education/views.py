@@ -30,6 +30,7 @@ def course_details(request, Edu_id, Course_id):
     course = Courses.objects
     edu_det = get_object_or_404(edu, pk=Edu_id)
     course_det = get_object_or_404(course, pk=Course_id)
+    
     context = {'courses':course_det, 'edu':edu_det, 'soc':soc}
     
     return render(request, 'education/education_course_detail.html', context)
