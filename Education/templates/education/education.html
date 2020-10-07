@@ -42,10 +42,10 @@
     <!-- Independent Study Body -->
     <div class='container-fluid col-md-8 col-lg-6 my-5'>
         <ul class='container-fluid ml-xl-5' id='islist'>
-            {% for c in courses.all %}
+            {% for i in individual.all %}
             <li class='row'>
-                <div class='col-2 col-sm-1'>{{ c.other_Progress|safe }}</div>
-                <div class='col-10 col-sm-11'>{{ c.other_Name }}</div>
+                <div class='col-2 col-sm-1'>{{ i.other_Progress|safe }}</div>
+                <div class='col-10 col-sm-11'>{{ i.other_Name }}</div>
             </li>
             {% endfor %}
         </ul>
