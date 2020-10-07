@@ -4,12 +4,12 @@ from Global.models import Skills, Social
 
 def skills(request):
 
-    t_skills = Skills.skillFilter('Technical')
-    s_skills = Skills.skillFilter('Soft')
-    o_skills = Skills.skillFilter('Other')
+    tech = Skills.tech_skills()
+    soft = Skills.soft_skills()
+    other = Skills.other_skills()
     soc = Social.objects
 
-    context = {'t_skills':t_skills, 's_skills':s_skills, 'o_skills':o_skills, 'soc':soc}
+    context = {'tech':tech, 'soft':soft, 'other':other, 'soc':soc}
 
     return render(request, 'skills/skills.html', context)
 

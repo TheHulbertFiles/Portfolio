@@ -18,7 +18,7 @@
             <h4 class='mb-0'>Technical</h4>
             <hr />
             <div class='container' id='skillsList'>
-                {% for t in t_skills.all %}
+                {% for t in tech.all %}
                 <span>
                     <a href='{% url "skill_details" t.id %}'>{{ t.skill_Name }}</a>
                     <small class='annotation'>{{ t.skill_Years|stringformat:'d' }} Years &emsp;</small>
@@ -32,7 +32,7 @@
             <h4 class='mb-0'>Soft</h4>
             <hr />
             <div class='container' id='skillsList'>
-                {% for s in s_skills.all %}
+                {% for s in soft.all %}
                 <span>
                     <a href='{% url "skill_details" s.id %}'>{{ s.skill_Name }}</a>
                     <small  class='annotation'>{{ s.skill_Years|stringformat:'d' }} Years &emsp;</small>
@@ -46,7 +46,7 @@
             <h4 class='mb-0'>Other</h4>
             <hr />
             <div class='container' id='skillsList'>
-                {% for o in o_skills.all %}
+                {% for o in other.all %}
                 <span>
                     <a href='{% url "skill_details" o.id %}'>{{ o.skill_Name }}</a>
                     <small  class='annotation'>{{ o.skill_Years|stringformat:'d' }} Years &emsp;</small>

@@ -93,6 +93,14 @@ class Skills(models.Model):
     def __str__(self):
         return self.skill_Name
 
-    def skillFilter(string):
-        skills_f = Skills.objects.all().filter(skill_Type=string)
-        return skills_f
+    def tech_skills():
+        t_skills = Skills.objects.all().filter(skill_Type='Technical')
+        return t_skills
+
+    def other_skills():
+        o_skills = Skills.objects.all().filter(skill_Type='Other')
+        return o_skills
+
+    def soft_skills():
+        s_skills = Skills.objects.all().filter(skill_Type='Soft')
+        return s_skills
