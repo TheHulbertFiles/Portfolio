@@ -45,7 +45,7 @@
             {% for i in individual.all %}
             <li class='row'>
                 <div class='col-2 col-sm-1'>{{ i.other_Progress|safe }}</div>
-                <div class='col-10 col-sm-11'>{{ i.other_Name }}</div>
+                <div class='col-10 col-sm-11'>{{ i.other_Name|safe }}</div>
             </li>
             {% endfor %}
         </ul>
