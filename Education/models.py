@@ -40,6 +40,7 @@ class Other(models.Model):
     other_Name = models.CharField(max_length=200)
     other_Organization = models.CharField(max_length=200)
     other_Progress = models.CharField(max_length=200, blank=True)
+    other_Description = models.TextField(max_length=1000, blank=True)
 
     class Meta:
         verbose_name_plural = "Other Courses"
