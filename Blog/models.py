@@ -12,7 +12,7 @@ class Post(models.Model):
     post_Image = models.ImageField(upload_to='images/')
     post_Body = RichTextField()
     post_Mod_Date = models.DateTimeField()
-    post_tags = models.ManyToManyField(Tags)
+    post_Tags = models.ManyToManyField(Tags)
 
     def __str__(self):
         return self.post_Title
