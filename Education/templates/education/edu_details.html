@@ -22,7 +22,7 @@
         <p><strong>Skills:</strong> 
             <!-- Cycle Through Skills list -->
             {% for s in edu.education_Skills.all %} 
-                <a href='{% url "skill_details" s.id %}'>{{ s|capitalize }}</a>,  
+                <a href='{% url "skill_details" s.id %}'>{{ s|capfirst }}</a>,  
             {% endfor %}</p>
     </div>
 
