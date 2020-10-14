@@ -21,7 +21,7 @@
         <h6 class='mb-0'>{{ e.education_University }}</h6>
         <small class='annotation'>{{ e.education_Dates }}</small>
         <p class='description mt-3'>
-            {{ e.degree_sum | linebreaksbr }} ...
+            {{ e.degree_sum|safe|linebreaksbr }} ...
             <a href='{% url "edu_details" e.id e.education_Degree %}'>Read More</a>
         </p>
     </div>

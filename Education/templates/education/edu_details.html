@@ -18,7 +18,7 @@
         <hr />
         <p><strong>Duration:</strong> {{ edu.education_Dates }}</p>
         <p><strong>GPA:</strong> {{ edu.education_GPA }}</p>
-        <p><strong>Description:</strong> {{ edu.education_Description | linebreaksbr }}</p>
+        <p><strong>Description:</strong> {{ edu.education_Description|safe|linebreaksbr }}</p>
         <p><strong>Skills:</strong> 
             <!-- Cycle Through Skills list -->
             {% for s in edu.education_Skills.all %} 
@@ -34,10 +34,10 @@
                 {% for c in edu.education_Courses.all %}
                 <div class='row'>
                     <div class='container col-4'>
-                        <strong>{{ c.course_Abbr }} {{ c.course_Number}}</strong>
+                        <strong>{{ c.course_Abbr }} {{ c.course_Number }}</strong>
                     </div>
                     <div class='container col-8'>
-                        <a href='{% url "course_details" c.id %}'>{{c.course_Name}}</a>
+                        <a href='{% url "course_details" c.id %}'>{{ c.course_Name }}</a>
                     </div>
                 </div>
                 <hr />
