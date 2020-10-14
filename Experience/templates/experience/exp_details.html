@@ -25,14 +25,14 @@
             {% endfor %}
         </ul>
         </p>
-            <p><strong>Courses:</strong></p>
+        <p><strong>Courses:</strong></p>
             <ul>
                 <!-- Cycle Through Course list -->
                 {% for c in exp.experience_Courses.all %} 
                     <li>{{ c.other_Name }}</li>
                 {% endfor %}
             </ul>
-            <p><strong>Skills:</strong></p>
+        <p><strong>Skills:</strong></p>
             <p>
                 <!-- Cycle Through Skills list -->
                 {% for s in exp.experience_Skills.all %} 

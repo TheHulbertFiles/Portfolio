@@ -19,11 +19,14 @@
         <p><strong>Duration:</strong> {{ edu.education_Dates }}</p>
         <p><strong>GPA:</strong> {{ edu.education_GPA }}</p>
         <p><strong>Description:</strong> {{ edu.education_Description|safe }}</p>
-        <p><strong>Skills:</strong> 
-            <!-- Cycle Through Skills list -->
-            {% for s in edu.education_Skills.all %} 
-                <a href='{% url "skill_details" s.id %}'>{{ s|capfirst }}</a>,  
-            {% endfor %}</p>
+        <p><strong>Skills:</strong></p>
+            <p>
+                <!-- Cycle Through Skills list -->
+                {% for s in edu.education_Skills.all %} 
+                    <a href='{% url "skill_details" s.id %}'>{{ s|capfirst }}</a>&ensp;  
+                {% endfor %}
+            </p>   
+            
     </div>
 
     <!-- Education Detail Courses -->
