@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 # Import Relational Tables
 from Global.models import Skills
@@ -33,7 +34,7 @@ class Education(models.Model):
     education_Dates = models.CharField(max_length=200)
     education_Graduation_Year = models.DateField(blank=True, null=True)
     education_GPA = models.CharField(max_length=200)
-    education_Description = models.TextField(max_length=2000)
+    education_Description = RichTextField()
     education_Skills = models.ManyToManyField(Skills)
     education_Courses = models.ManyToManyField('Courses')
 
