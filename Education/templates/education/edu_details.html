@@ -18,7 +18,7 @@
         <hr />
         <p><strong>Duration:</strong> {{ edu.education_Dates }}</p>
         <p><strong>GPA:</strong> {{ edu.education_GPA }}</p>
-        <p><strong>Description:</strong> {{ edu.education_Description|safe|linebreaksbr }}</p>
+        <p><strong>Description:</strong> {{ edu.education_Description|safe }}</p>
         <p><strong>Skills:</strong> 
             <!-- Cycle Through Skills list -->
             {% for s in edu.education_Skills.all %} 
