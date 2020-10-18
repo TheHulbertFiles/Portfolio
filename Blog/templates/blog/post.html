@@ -19,7 +19,7 @@
             <small class='text-muted'>Last Modified: {{ post.mod_date_f }}</small>
         </p>
         <p>{{ post.post_Body|safe|linebreaks }}</p>
-        <hr class='my-5'>
+        <hr class='mt-5'>
         <small class='mt-3 text-muted col-10'><strong>Tags:</strong>&emsp;
             <!-- Cycle Through Tags list for Post -->
              {% for tag in post.post_Tags.all %} 
