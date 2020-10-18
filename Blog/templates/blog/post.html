@@ -3,14 +3,14 @@
 {% load static %}
 
 {% block content %}
-<img class='img-fluid shadow-lg' src='{{ post.post_image.url }}'>
+<img class='img-fluid shadow-lg' src='{{ post.post_Image.url }}'>
 
 <!-- Profile -->
 <section class='container py-5' id='header'>
         
     <div class='container header'>
-        <h1 class='title mb-0'>{{ post.post_title }}</h1>
-        <small class='subheading'>Author: {{ post.post_author }}</small>
+        <h1 class='title mb-0'>{{ post.post_Title }}</h1>
+        <small class='subheading'>Author: {{ post.post_Author }}</small>
         <hr class='col-6 col-lg-4 divider'>
     </div>
     <div class='container'>
@@ -18,10 +18,10 @@
             <small class='citation'>Published: {{ post.pub_date_mod }}</small><br />
             <small class='text-muted'>Last Modified: {{ post.mod_date_f }}</small>
         </p>
-        <p>{{ post.post_body|safe|linebreaks }}</p>
+        <p>{{ post.post_Body|safe|linebreaks }}</p>
         <p class='mt-3 text-muted'><strong>Tags:</strong>&emsp;
             <!-- Cycle Through Tags list for Post -->
-             {% for tag in post.post_tags.all %} 
+             {% for tag in post.post_Tags.all %} 
                 {{ tag|upper }},  
             {% endfor %}
         </p>
