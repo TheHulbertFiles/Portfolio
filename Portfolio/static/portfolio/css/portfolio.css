@@ -1,5 +1,5 @@
 nav {
-  background-color: #EA80B0;
+  background-color: #5A0500;
 }
 
 body {
@@ -25,14 +25,14 @@ h6 {
 }
 
 a {
-  color: /** #5A0500 **/ #EA80B0;
+  color: #5A0500;
   font-weight: 450;
 }
 
 a:hover, a > h5:hover {
   text-decoration: none;
   font-weight: 450;
-  color:/**  #6c757d **/ #EA80B0;
+  color: #6c757d;
   opacity: 50%;
 }
 
@@ -54,10 +54,10 @@ footer .fa-fw {
 }
 
 .annotation {
-  color: /** #6c757d **/ #EA80B0;
+  color: #6c757d;
   text-transform: uppercase;
 }
 
 .title {
-  color: /** #5A0500 **/ #EA80B0;
+  color: #5A0500;
 }

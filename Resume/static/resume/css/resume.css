@@ -25,7 +25,7 @@ h6 {
 }
 
 a {
-    color: /** #5A0500 **/ #EA80B0;
+    color: #5A0500;
     font-weight: 450;
 }
 
@@ -33,7 +33,7 @@ a:hover,
 a>h4:hover {
     text-decoration: none;
     font-weight: 450;
-    color:/**  #6c757d **/#EA80B0;
+    color: #6c757d;
     opacity: 50%;
 }
 
@@ -60,7 +60,7 @@ footer .fa-fw {
 }
 
 .title {
-    color: /** #5A0500 **/ #EA80B0;
+    color: #5A0500;
 }
 
 .btn {
@@ -82,7 +82,7 @@ footer .fa-fw {
 }
 
 .red {
-    color:/** #5A0500 **/ #EA80B0;
+    color: #5A0500;
     font-weight: 450;
 }
 
@@ -93,7 +93,7 @@ footer .fa-fw {
 }
 
 #islist i {
-    color: /** #5A0500 **/ #EA80B0;
+    color: #5A0500;
 }
 
 #item {
@@ -102,7 +102,7 @@ footer .fa-fw {
 
 #courseYear {
     font-weight: 500;
-    color: /** #5A0500 **/ #EA80B0;
+    color: #5A0500;
     text-align: center;
 }
 
@@ -121,5 +121,5 @@ i #ibg {
 }
 
 span #ibi {
-    color: #EA80B0;
+    color: #5A0500;
 }
