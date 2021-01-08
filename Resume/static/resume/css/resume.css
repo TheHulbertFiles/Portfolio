@@ -116,10 +116,10 @@ footer .fa-fw {
     flex-wrap: wrap;
 }
 
-i #ibg {
-    color: #6c757d;
+#ibg {
+    color: #AAAAAA;
 }
 
-span #ibi {
+#ibi {
     color: #5A0500;
 }
