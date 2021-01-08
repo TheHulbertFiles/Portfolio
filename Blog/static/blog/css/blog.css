@@ -6,3 +6,7 @@
 .subheading {
     text-transform: uppercase;
 }
+
+#ptext {
+    font-size: 12pt;
+}
