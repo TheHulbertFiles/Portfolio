@@ -192,6 +192,7 @@ MEDIA_URL = '/media/'
 
 UPLOAD_ROOT = os.path.join(BASE_DIR, 'files')
 UPLOAD_URL = '/files/'
+DATA_UPLOAD_MAX_MEMORY_SIZE = 10*1024*1024
 
 try:
     from .local_settings import *

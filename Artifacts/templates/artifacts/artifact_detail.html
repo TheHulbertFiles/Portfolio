@@ -13,36 +13,47 @@
         <hr class='col-6 col-lg-4 divider'>
     </div>
 
-    <img class='exImg shadow mx-auto' src='{{ art.artifact_Image.url }}'>
+    <div class='container'>
+        <img class='img-fluid mx-auto d-block shadow' src='{{ art.artifact_Image.url }}'>
+    </div>
 
     <div class='container my-5'>
-        <p>
+
+        <div class='my-5'>
+            <strong>Description:</strong><br/>
             {{ art.artifact_Description|safe|linebreaks }}
-        </p>
+        </div>
 
         <!-- Cycle Through Files list for Artifact -->
-        <p class='my-5'>
+        <div class='my-5'>
             <strong>File(s):</strong>
+            
             <!-- Cycle Through Files list for Artifact -->
-            {% for f in art.artifact_Files.all %}
-            <a href='{{ f.file_Upload.url }}'>
-                <div class='card col-6 col-md-3 shadow'>
-                    <div class='card-body text-center'>
-                        {{ f.file_Icon|safe }}<br/>
-                        {{ f.file_Name }}
+            <div class='row'>
+
+                {% for f in art.artifact_Files.all %}
+                <div class='col-md-4'>
+                    <div class='card shadow'>
+                        <a href='{{ f.file_Upload.url }}'>
+                            <div class='card-body text-center'>
+                                {{ f.file_Icon|safe }}<br/>
+                                {{ f.file_Name }}
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </a>
-            {% endfor %}
-        </p>
+                {% endfor %}
 
-        <p class='my-5'>
+            </div>
+        </div>
+
+        <div class='my-5'>
             <strong>Tags:</strong>&emsp;
             <!-- Cycle Through Tags list for Artifact -->
             {% for tag in art.artifact_Skills.all %} 
                 {{ tag|upper }}, 
             {% endfor %}
-        </p>
+        </div>
 
     </div>
 

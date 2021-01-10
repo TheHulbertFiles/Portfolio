@@ -29,7 +29,8 @@ class Files(models.Model):
         ("docx","docx"),
         ("pdf","pdf"),
         ("xlsx","xlsx"),
-        ("pptx","pptx")
+        ("pptx","pptx"),
+        ("image","image")
     )
 
     file_Name = models.CharField(max_length=200)
