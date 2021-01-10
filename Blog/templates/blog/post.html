@@ -3,8 +3,6 @@
 {% load static %}
 
 {% block content %}
-<img class='img-fluid shadow-lg' src='{{ post.post_Image.url }}'>
-
 <!-- Profile -->
 <section class='container py-5' id='header'>
         
@@ -13,7 +11,12 @@
         <small class='subheading'>Author: {{ post.post_Author }}</small>
         <hr class='col-6 col-lg-4 divider'>
     </div>
+
     <div class='container'>
+        <img class='rounded w-75 mx-auto d-block shadow-lg' src='{{ post.post_Image.url }}'>
+    </div>
+
+    <div class='container my-5'>
         <p>
             <small class='citation'>Published: {{ post.pub_date_mod }}</small><br />
             <small class='text-muted'>Last Modified: {{ post.mod_date_f }}</small>

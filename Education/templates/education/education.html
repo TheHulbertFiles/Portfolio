@@ -13,21 +13,26 @@
     </div>
 
     <!-- Education Body -->
-    {% for e in edu.all %}
     <div class='container col-12 col-md-10 my-5'>
-        <a href='{% url "edu_details" e.id e.education_Degree %}'>
-            <h4 class='title mb-0'>{{ e.education_Degree }}</h4>
-        </a>
-        <h6 class='mb-0'>{{ e.education_University }}</h6>
-        <small class='annotation'>{{ e.education_Dates }}</small>
-        <p class='description mt-3'>
-            {{ e.degree_sum|safe|linebreaksbr }} ...
-            <a href='{% url "edu_details" e.id e.education_Degree %}'>Read More</a>
-        </p>
-    </div>
 
-    <hr class='col-10'>
-    {% endfor %}
+        {% for e in edu.all %}
+        <div class='edList'>
+
+            <img class='float-right w-25 mx-3 px-md-3 mb-3' src='{{ e.education_Image.url }}' alt=''>
+            <a href='{% url "edu_details" e.id e.education_Degree %}'><h4 class='title mb-0'>{{ e.education_Degree }}</h4></a>
+            <h6 class='mb-0'>{{ e.education_University }}</h6>
+            <small class='annotation'>{{ e.education_Dates }}</small>
+            <p class='description mt-3'>
+                {{ e.degree_sum|safe|linebreaksbr }} ...
+                <a href='{% url "edu_details" e.id e.education_Degree %}'>Read More</a>
+            </p>
+
+        </div>
+
+        <hr class='col-10'>
+        {% endfor %}
+    
+    </div>
 
     <!-- Independent Study Header -->
     <div class='container header mt-5'>
@@ -49,6 +54,12 @@
             </li>
             {% endfor %}
         </ul>
+    </div>
+
+    <div class='container col-12 col-md-10 mt-5'>
+        <span class='small text-muted'>
+            Disclaimer: The institution image(s) and crest(s) are used on this page solely for the purpose of visual identification and representing prior educational experience with the institutions(s). I hold no claims to the intellectual property of the institution(s), nor speak for, represent, or hold business partnerships or relationships with said institution(s) unless otherwise indicated.
+        </span>
     </div>
 
 </section>
