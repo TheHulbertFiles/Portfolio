@@ -26,20 +26,24 @@
 
         <!-- Cycle Through Files list for Artifact -->
         <div class='my-5'>
-            <strong>File(s):</strong>
+            <strong>File(s):</strong><br/>
             
             <!-- Cycle Through Files list for Artifact -->
             <div class='row'>
 
                 {% for f in art.artifact_Files.all %}
                 <div class='col-md-4'>
-                    <div class='card shadow'>
-                        <a href='{{ f.file_Upload.url }}'>
-                            <div class='card-body text-center'>
+                    <div class='card mt-3 shadow'>
+                        <div class='card-body text-center'>
+                            <a href='{{ f.file_Upload.url }}'>
                                 {{ f.file_Icon|safe }}<br/>
-                                {{ f.file_Name }}
-                            </div>
-                        </a>
+                                {{ f.file_Name }}<br/>
+                            </a>
+                        </div>
+                        <div class='card-footer'>
+                            <small>Description: {{ f.file_Description }}<br/>
+                            File Type: {{ f.file_Type }}</small>
+                        </div>
                     </div>
                 </div>
                 {% endfor %}
@@ -51,7 +55,7 @@
             <strong>Tags:</strong>&emsp;
             <!-- Cycle Through Tags list for Artifact -->
             {% for tag in art.artifact_Skills.all %} 
-                {{ tag|upper }}, 
+                <a href='{% url "skill_details" tag.id %}'>{{ tag|capfirst }}</a>&ensp;
             {% endfor %}
         </div>
 
