@@ -14,6 +14,7 @@ class Artifact(models.Model):
     artifact_Description = RichTextField()
     artifact_Skills = models.ManyToManyField(Skills)
     artifact_Files = models.ManyToManyField(Files)
+    artifact_Updated = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name_plural = "Artifacts"
@@ -23,3 +24,6 @@ class Artifact(models.Model):
 
     def summary(self):
         return self.artifact_Description[:200]
+
+    def art_Mod_Date(self):
+        return self.artifact_Updated.strftime('%B %e, %Y')
